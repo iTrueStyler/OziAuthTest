@@ -32,7 +32,7 @@ button {
 }
 
 .form {
-  background-color: rgb(228, 247, 194);
+  background-color: rgb(228, 245, 220);
   display: block;
   position: relative;
   padding: 24px;
@@ -42,6 +42,7 @@ button {
   width: 400px;
   border: solid 1px #c2bebe;
   border-radius: 24px;
+
   &__input-block {
     display: flex;
     padding: 10px;
@@ -67,9 +68,84 @@ button {
   margin-right: auto;
   margin-left: auto;
   width: 400px;
-  border: solid 1px #c2bebe;
+  border: solid 1px #c7ccc9;
   border-radius: 24px;
 }
 .error {
   color: red;
+}
+.a-box {
+  display: inline-block;
+  width: 240px;
+  text-align: center;
+}
+
+.img-container {
+  height: 230px;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 0px 0px 20px 20px;
+  display: inline-block;
+}
+
+.img-container img {
+  transform: skew(0deg, -13deg);
+  height: 250px;
+  margin: -35px 0px 0px -70px;
+}
+
+.inner-skew {
+  display: inline-block;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 0px;
+  transform: skew(0deg, 13deg);
+  font-size: 0px;
+  margin: 30px 0px 0px 0px;
+  background: #c8c2c2;
+  height: 250px;
+  width: 200px;
+}
+
+.text-container {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  padding: 120px 20px 20px 20px;
+  border-radius: 20px;
+  background: #fff;
+  margin: -120px 0px 0px 0px;
+  line-height: 19px;
+  font-size: 14px;
+}
+
+.text-container h3 {
+  margin: 20px 0px 10px 0px;
+  color: #04bcff;
+  font-size: 18px;
+}
+
+.userform {
+  background-color: rgb(228, 245, 220);
+  display: block;
+  position: relative;
+  padding: 24px;
+  margin-top: 30vh;
+  margin-right: auto;
+  margin-left: auto;
+  width: 400px;
+  border: solid 1px #c2bebe;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+}
+.alert-rus {
+  width: 250px;
+  background-color: rgb(255, 255, 255);
+  font-size: 14px;
+  position: absolute;
+  top: 170px;
+  left: 580px;
+  padding: 10px;
+  text-align: center;
+  border: solid 2px royalblue;
+  border-radius: 6px;
 }

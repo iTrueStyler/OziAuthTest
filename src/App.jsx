@@ -26,7 +26,7 @@ const App = () => {
             },
           })
           .then(({ data }) => {
-            
+
             setUser(data);
             setLogin(true);
           });
@@ -35,8 +35,14 @@ const App = () => {
       .then((data) => {
         setlogObj(data);
       })
-      .catch(function (error) {
-        console.log(error);
+      .catch((error) => {
+        let alert = document.createElement("div");
+        alert.className = "alert-rus";
+        alert.innerText = "Email or password is incorrect";
+        document.body.append(alert);
+        setTimeout(() => {
+          document.body.removeChild(alert);
+        }, 3000);
       });
   };
 
