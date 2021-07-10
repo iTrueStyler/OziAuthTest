@@ -1,27 +1,28 @@
 import React from "react";
 import * as yup from "yup";
 import { Formik } from "formik";
+import { loginAuth } from "../redux/reducers/userReducer";
+import { useDispatch } from "react-redux";
 
-const HomePage = ({authUser}) => {
+const HomePage = () => {
+  const dispatch = useDispatch();
   const validationSchema = yup.object().shape({
     email: yup
       .string()
-      
+
       .required("Обязательное поле"),
     password: yup
       .string()
-      
+
       .required("Обязательное поле"),
   });
- 
+
   return (
     <div>
       <Formik
         initialValues={{ email: "", password: "" }}
         validateOnBlur
-        onSubmit={(values) => {
-          authUser(values);
-        }}
+        onSubmit={(value) => dispatch(loginAuth(value))}
         validationSchema={validationSchema}
       >
         {({
@@ -65,7 +66,7 @@ const HomePage = ({authUser}) => {
               <p className={"error"}>{errors.password}</p>
             )}
 
-            <button 
+            <button
               disabled={!isValid && !dirty}
               onClick={handleSubmit}
               type={"submit"}
