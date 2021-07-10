@@ -15,7 +15,7 @@ const users = (state = initialState, action) => {
     case SET_USER_DATA:
       return {
         ...state,
-        ...action.payload.data,
+        // ...action.payload.data,
         isAuth: true,
       };
     case SET_LOGOUT:
@@ -63,6 +63,15 @@ export const loginAuth = (obj) => {
         .then(({ data }) => {
           localStorage.setItem("userInfo", JSON.stringify(data.data));
           dispatch(setAuthUserData(data));
+        })
+        .catch((error) => {
+          let alert = document.createElement("div");
+          alert.className = "alert-rus";
+          alert.innerText = "Email or password is incorrect";
+          document.body.append(alert);
+          setTimeout(() => {
+            document.body.removeChild(alert);
+          }, 3000);
         });
     } catch (e) {
       console.log(e);
